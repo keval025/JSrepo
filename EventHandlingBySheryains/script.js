@@ -66,3 +66,21 @@ document.addEventListener("mousemove", (e) => {
 
 // Advanced mini projects
 // project 1 : dynamic todo app
+const input = document.getElementById("todoInput");
+const list = document.getElementById("todoList");
+
+document.getElementById("addBtn").addEventListener("click", () => {
+  if (input.value.trim() === "") return;
+
+  const li = document.createElement("li");
+  li.innerText = input.value;
+  list.appendChild(li);
+  input.value = "";
+});
+
+/* Event Delegation */
+list.addEventListener("click", (e) => {
+  if (e.target.tagName === "LI") {
+    e.target.classList.toggle("done");
+  }
+});
