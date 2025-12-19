@@ -1,0 +1,54 @@
+/* classList Object add(), remove(), toggle(), contains() Methods */
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .activePara{
+            color: green;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <button id="css">CSS</button>
+    <button id="addClass">Add class</button>
+    <button id="removeClass">Remove class</button>
+    <button id="toggleClass">toggle class</button>
+
+    <P>
+        Lorem ipsum dolor sit amet consectetur 
+        adipisicing elit. Facere repellendus, eaque 
+        voluptates illo voluptate aspernatur quasi earum, 
+        deleniti nihil, odit aut. Consectetur unde laborum 
+        debitis ducimus inventore nam, recusandae ullam.
+    </P>
+</body>
+<script>
+    let btn1 = document.querySelector("#css");
+    let btn2 = document.querySelector("#addClass");
+    let para = document.querySelector("p");
+
+    btn1.addEventListener("click", () => {
+        para.style.color = "blue";
+        para.style.backgroundColor = "lightgray";
+    })
+
+    btn2.addEventListener("click", () => {
+        para.classList.add("activePara");
+    })
+
+    let btn3 = document.querySelector("#removeClass");
+    btn3.addEventListener("click", () => {
+        para.classList.remove("activePara");
+    })
+
+    let btn4 = document.querySelector("#toggleClass");
+    btn4.addEventListener("click", () => {
+        para.classList.toggle("activePara");
+    })
+</script>
+</html>

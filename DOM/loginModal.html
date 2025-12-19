@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            font-family: Arial, Helvetica, sans-serif;
+            box-sizing: border-box;
+        }
+        .loginModal{
+            width: 30%;
+            height: 100vh;
+            position: fixed;
+            transition: 0.5s;
+            padding: 40px;
+            top: 0px;
+            right: 0px;
+            background-color: lightgray;
+        }
+        .headingModal{
+            display: flex;
+            margin-top: 100px;
+            justify-content: space-between;
+        }
+        .headingModal h3{
+            font-size: 20px;
+        }
+        .loginModal form{
+            margin-top: 40px;
+        }
+        .loginModal form label{
+            display: block;
+        }
+        .loginModal form input{
+            width: 100%;
+            height: 40px;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        .loginModal form button{
+            width: 100%;
+            margin-top: 30px;
+            padding: 15px 0px;
+            color: white;
+            border: none;
+            background-color: orange;
+        }
+
+        .showModal{
+            right: 0px;
+        }
+    </style>
+</head>
+<body>
+    <div class="loginModal" >
+        <div class="headingModal">
+            <h3>Login</h3>
+            <p>Use email, instead</p>
+        </div>
+        <form action="">
+            <label for="">Mobile No.</label>
+            <input type="text">
+        </form>
+    </div>
+   <button>Login</button> 
+</body>
+<script>
+    let btn = document.querySelector("button");
+    let modal = document.querySelector(".loginModal");
+    btn.addEventListener("click", () => {
+        modal.classList.add("showModal")
+    }) 
+</script>
+</html>

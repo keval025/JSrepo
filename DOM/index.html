@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="password" placeholder="Enter password"> <button>Show</button>
+</body>
+    <script>
+        let btn = document.querySelector("button");
+        let inputElement = document.querySelector("input");
+
+        btn.addEventListener("click", () => {
+            if(btn.innerHTML == "Show"){
+                inputElement.type = "text";
+                btn.innerHTML = "Hide";
+            }else{
+                inputElement.type = "password";
+                btn.innerHTML = "Show";
+            }
+        })
+    </script>
+</html>

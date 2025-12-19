@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .h1{
+            text-align: center;
+            padding: 30px 0px;
+        }
+        .faqMid{
+            max-width: 1000px;
+            margin: auto;
+        }
+        .faqItems{
+            border: 1px solid #ccc;
+            margin-top: 20px;
+        }
+        .faqItems h3{
+            padding: 15px;
+            position: relative;
+            cursor: pointer;
+            background-color: yellowgreen;
+        }
+        .faqItems h3 span{
+            position: absolute;
+            right: 10px;
+        }
+        .faqItems p{
+            font-size: 18px;
+            line-height: 30px;
+            padding: 10px;
+            display: none;
+        }
+        .showAns{
+            display: block !important;
+        }
+    </style>
+</head>
+<body>
+    <h1>Frequently Asked Questions!</h1>
+    <div class="faqMid">
+        <div class="faqItems">
+            <h3>Question1 <span>+</span></h3>
+            <p>Answer1</p>
+
+        </div>
+        <div class="faqItems">
+            <h3>Question1 <span>+</span></h3>
+            <p>Answer1</p>
+            
+        </div>
+        <div class="faqItems">
+            <h3>Question1 <span>+</span></h3>
+            <p>Answer1</p>
+            
+        </div>
+        <div class="faqItems">
+            <h3>Question1 <span>+</span></h3>
+            <p>Answer1</p>
+            
+        </div>
+    </div>
+</body>
+<script>
+    let allQuestion = document.querySelectorAll(".faqItems h3")
+    allQuestion.forEach((item, currIdx) => {
+        item.addEventListener("click", () => {
+
+            allQuestion.forEach((heading, i) => {
+                if(currIdx != i){
+                    heading.nextElementSibling.classList.remove("showAns")
+                    heading.lastElementChild.innerHTML = "+"
+                }
+            })
+
+            if(item.lastElementChild.innerHTML == "+"){
+                item.lastElementChild.innerHTML = "-"
+            }else{
+                item.lastElementChild.innerHTML = "+"
+            }
+           item.nextElementSibling.classList.toggle("showAns")
+        })
+    })
+</script>
+</html>
